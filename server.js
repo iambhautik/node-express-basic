@@ -1,14 +1,14 @@
 import dotenv from 'dotenv';
 import express from 'express';
+import connectToDatabase from './config/dbConnection.js';
 import userRoute from './routes/usersRoutes.js';
 
 dotenv.config()
-
+connectToDatabase()
 const app = express()
 const port = process.env.PORT || 3000
 
-// const apiRoute = app.use('/api', (req, res, next) => { next()})
-
+app.use(express.json())
 app.use('/api/users', userRoute)
 
 app.listen(port, () => {
