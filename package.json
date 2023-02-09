@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "cp env-dev.txt .env && nodemon server.js"
+    "dev": "git pull origin dev && nodemon server.js"
   },
   "repository": {
     "type": "git",
